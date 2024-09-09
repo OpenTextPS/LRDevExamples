@@ -1,0 +1,48 @@
+{
+	"startTime": "2024-09-09T10:42:10+02:00",
+	"endTime": "2024-09-09T10:42:21+02:00",
+	"elapsedTime": "00:00:11",
+	"status": "Passed",
+	"iterations": 1,
+	"statistics": {
+		"New Connections": 7,
+		"Total Hits": 31,
+		"Total BytesSent": 15650,
+		"Total Throughput": 1203995
+	},
+	"transactions": [
+		{
+			"name": "AOS_landing_page",
+			"minDuration": 2412,
+			"avgDuration": 2412,
+			"maxDuration": 2412,
+			"90%": 2412,
+			"pass": 1,
+			"fail": 0
+		},
+		{
+			"name": "AOS_login",
+			"minDuration": 434,
+			"avgDuration": 434,
+			"maxDuration": 434,
+			"90%": 434,
+			"pass": 1,
+			"fail": 0
+		},
+		{
+			"name": "AOS_logout",
+			"minDuration": 154,
+			"avgDuration": 154,
+			"maxDuration": 154,
+			"90%": 154,
+			"pass": 1,
+			"fail": 0
+		}
+	],
+	"Hits per Host": [
+		{
+			"HostName": "www.advantageonlineshopping.com",
+			"Hits": 31
+		}
+	]
+}
