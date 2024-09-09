@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="DevWeb_AdvantageOnlineShopping">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/VuGen/Scripts/DevWeb_AdvantageOnlineShopping.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

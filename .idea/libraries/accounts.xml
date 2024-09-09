@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="accounts">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/AdvantageOnlineShopping/datafiles/accounts.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
