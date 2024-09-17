@@ -44,7 +44,7 @@ jobs:
       - name: Print test run ID
         run: echo "LRC Run ID is ${{ steps.lrc_run_test.outputs.lrc_run_id }}"
       - name: Upload LRC results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lrc-report-${{ steps.lrc_run_test.outputs.lrc_run_id }}
           path: ${{ github.event.inputs.lrc_output_dir }}
