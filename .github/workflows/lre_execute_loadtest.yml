@@ -12,7 +12,7 @@ on:
       lre_test:
         description: 'Test ID'
         required: true
-      lre_test_output_dir:
+      lre_output_dir:
         description: 'The directory to save results'
         required: false
         default: 'LRE-Test-'${{ github.event.inputs.lre_test }}
@@ -43,7 +43,7 @@ jobs:
           lre_post_run_action: 'Collate and Analyze'
           lre_vuds_mode: false
           lre_status_by_sla: false
-          lre_output_dir: ${{ github.event.inputs.lre_test_output_dir }}
+          lre_output_dir: ${{ github.event.inputs.lre_output_dir }}
       - name: Print test run ID
         run: echo "LRE Run ID is ${{ steps.lre_run_test.outputs.lre_run_id }}"
       - name: Upload LRE results
