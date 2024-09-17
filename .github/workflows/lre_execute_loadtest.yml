@@ -1,34 +1,44 @@
 name: lre_execute_loadtest
 
 on:
-  push:
-    branches:
-      - main
+workflow_dispatch:
+    inputs:
+      lre_server:
+        description: 'LRE URL'
+        required: true
+        default: 'nimbuswindows.emea.softwaregrp.net'
+      lre_domain:
+        description: 'Domain'
+        required: true
+        default: 'DEFAULT'
+      lre_project:
+        description: 'Project'
+        required: true
+        default: 'advantageonlineshopping'
+      lre_test:
+        description: 'Test ID'
+        required: true
+      lre_output_dir:
+        description: 'The directory to save results'
+        required: false
+        default: './LreResult'
+      lrc_report_types:
+        description: 'Target report types. For example: pdf, docx, csv'
+        required: false
+        default: 'pdf'
+
 
 jobs:
-  test:
+  start_load_test:
     runs-on: nimbuswindows
-    name: Execute LRE load test
-    env:
-      lre_username: ${{ secrets.LRE_APIKey_ClientId }}
-      lre_password: ${{ secrets.LRE_APIKey_ClientSecret }}
+    name: Execute LRE load test   
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: adopt
-          java-version: '11'
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Use LRE GitHub Action
+      - name: Run test in LRE
         uses: MicroFocus/lre-gh-action@v1.0.2
+        id: lre_run_test
+        env:
+            lre_username: ${{ secrets.LRE_APIKey_ClientId }}
+            lre_password: ${{ secrets.LRE_APIKey_ClientSecret }}
         with:
           lre_action: ExecuteLreTest
           lre_description: Run load test in LRE
@@ -47,7 +57,7 @@ jobs:
           lre_status_by_sla: false
           lre_output_dir: ${{ github.workspace }}
 
-      - name: Upload build artifacts
+      - name: Upload LRE results
         uses: actions/upload-artifact@v4
         with:
           name: LRE Load Test Result
