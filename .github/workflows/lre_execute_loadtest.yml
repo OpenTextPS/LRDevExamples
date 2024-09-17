@@ -23,14 +23,14 @@ on:
 jobs:
   test:
     runs-on: self-hosted
-    name: Execute LRE load test  
-    env:
-        lre_username: ${{ secrets.LRE_APIKey_ClientId }}
-        lre_password: ${{ secrets.LRE_APIKey_ClientSecret }}        
+    name: Execute LRE load test      
     steps:
       - name: Run test in LRE
         uses: MicroFocus/lre-gh-action@v1.0.2
         with:
+        lre_username: ${{ secrets.LRE_APIKey_ClientId }}
+        lre_password: ${{ secrets.LRE_APIKey_ClientSecret }}
+        lre_enable_stacktrace : true       
           lre_action: ExecuteLreTest
           lre_description: Run load test in LRE
           lre_server: nimbuswindows.emea.softwaregrp.net
@@ -42,9 +42,8 @@ jobs:
           lre_test_instance: AUTO
           lre_timeslot_duration_hours: 0
           lre_timeslot_duration_minutes: 15
-          lre_post_run_action: Collate and Analyze
+          lre_post_run_action: 'Collate and Analyze'
           lre_vuds_mode: false
-          lre_trend_report: ASSOCIATED
           lre_status_by_sla: false
           lre_output_dir: ${{ github.workspace }}
       - name: Upload LRE results
