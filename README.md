@@ -1,6 +1,6 @@
 # LRDevExamples
 LoadRunner Examples
 
-AdvantageOnlineShopping works with VS Code and IntelliJ
+The AdvantageOnlineShopping DevWeb script works with VS Code and IntelliJ
 
 
