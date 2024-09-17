@@ -15,7 +15,7 @@ on:
       lre_output_dir:
         description: 'The directory to save results'
         required: false
-        default: 'LRE-Test-'${{ github.event.inputs.lre_test }}
+        default: './LRE-Test-${{ github.event.inputs.lre_test }}'
 jobs:
   test:
     runs-on: self-hosted
