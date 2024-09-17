@@ -15,7 +15,7 @@ on:
       lre_test_output_dir:
         description: 'The directory to save results'
         required: false
-        default: './LreResult'
+        default: 'LRE-Test-'${{ github.event.inputs.lre_test }}
 jobs:
   test:
     runs-on: self-hosted
@@ -43,12 +43,12 @@ jobs:
           lre_post_run_action: 'Collate and Analyze'
           lre_vuds_mode: false
           lre_status_by_sla: false
-          lre_output_dir: ${{ github.workspace }}/${{ github.event.inputs.lre_test_output_dir }}
+          lre_output_dir: ${{ github.event.inputs.lre_test_output_dir }}
       - name: Print test run ID
         run: echo "LRE Run ID is ${{ steps.lre_run_test.outputs.lre_run_id }}"
       - name: Upload LRE results
         uses: actions/upload-artifact@v4
         with:
           name: LRE-Load-Test-Result
-          path: ${{ github.event.inputs.lre_test_output_dir }}
+          path: ${{ github.workspace }}/${{ github.event.inputs.lre_test_output_dir }}
           
