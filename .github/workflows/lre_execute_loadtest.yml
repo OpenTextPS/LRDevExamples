@@ -1,8 +1,6 @@
-name: lre_execute_loadtest
-
 on:
-workflow_dispatch:
-    inputs:
+    workflow_dispatch:
+      inputs:
       lre_server:
         description: 'LRE URL'
         required: true
@@ -26,8 +24,6 @@ workflow_dispatch:
         description: 'Target report types. For example: pdf, docx, csv'
         required: false
         default: 'pdf'
-
-
 jobs:
   start_load_test:
     runs-on: nimbuswindows
