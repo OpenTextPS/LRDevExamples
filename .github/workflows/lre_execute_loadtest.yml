@@ -1,10 +1,6 @@
 on:
-    workflow_dispatch:
-      inputs:
-      lre_server:
-        description: 'LRE URL'
-        required: true
-        default: 'http://nimbuswindows.emea.softwaregrp.net'
+  workflow_dispatch:
+    inputs:
       lre_domain:
         description: 'Domain'
         required: true
@@ -37,9 +33,9 @@ jobs:
           lre_server: nimbuswindows.emea.softwaregrp.net
           lre_https_protocol: false
           lre_authenticate_with_token: true
-          lre_domain: DEFAULT
-          lre_project: advantageonlineshopping
-          lre_test: 198
+          lre_domain: ${{ github.event.inputs.lre_domain }}
+          lre_project: ${{ github.event.inputs.lre_project }}
+          lre_test: ${{ github.event.inputs.lre_test }}
           lre_test_instance: AUTO
           lre_timeslot_duration_hours: 0
           lre_timeslot_duration_minutes: 15
