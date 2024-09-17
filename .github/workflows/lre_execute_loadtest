@@ -10,8 +10,8 @@ jobs:
     runs-on: nimbuswindows
     name: Execute LRE load test
     env:
-      lre_username: ${{ secrets.LRE_USERNAME_TOKEN }}
-      lre_password: ${{ secrets.LRE_PASSWORD_TOKEN }}
+      lre_username: ${{ secrets.LRE_APIKey_ClientId }}
+      lre_password: ${{ secrets.LRE_APIKey_ClientSecret }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -27,20 +27,20 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Use My LRE GitHub Action
+      - name: Use LRE GitHub Action
         uses: MicroFocus/lre-gh-action@v1.0.2
         with:
           lre_action: ExecuteLreTest
-          lre_description: running new yaml test
-          lre_server: mylreserver.mydomain.com/?tenant=fa128c06-5436-413d-9cfa-9f04bb738df3
-          lre_https_protocol: true
+          lre_description: Run load test in LRE
+          lre_server: nimbuswindows.emea.softwaregrp.net
+          lre_https_protocol: false
           lre_authenticate_with_token: true
-          lre_domain: DANIEL
-          lre_project: proj1
-          lre_test: 176
+          lre_domain: DEFAULT
+          lre_project: advantageonlineshopping
+          lre_test: 198
           lre_test_instance: AUTO
           lre_timeslot_duration_hours: 0
-          lre_timeslot_duration_minutes: 30
+          lre_timeslot_duration_minutes: 15
           lre_post_run_action: Collate and Analyze
           lre_vuds_mode: false
           lre_trend_report: ASSOCIATED
@@ -50,5 +50,5 @@ jobs:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: build-artifacts
+          name: LRE Load Test Result
           path: ${{ github.workspace }}/LreResult
