@@ -23,14 +23,15 @@ on:
 jobs:
   test:
     runs-on: self-hosted
-    name: Execute LRE load test      
+    name: Execute LRE load test 
+    env:
+      lre_username: ${{ secrets.LRE_USERNAME }}
+      lre_password: ${{ secrets.LRE_PASSWORD }}    
     steps:
       - name: Run test in LRE
         uses: MicroFocus/lre-gh-action@v1.0.2
         with:
-        lre_username: ${{ secrets.LRE_APIKey_ClientId }}
-        lre_password: ${{ secrets.LRE_APIKey_ClientSecret }}
-        lre_enable_stacktrace : true       
+          lre_enable_stacktrace : true       
           lre_action: ExecuteLreTest
           lre_description: Run load test in LRE
           lre_server: nimbuswindows.emea.softwaregrp.net
