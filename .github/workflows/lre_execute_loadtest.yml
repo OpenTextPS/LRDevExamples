@@ -26,7 +26,7 @@ on:
         default: 'pdf'
 jobs:
   start_load_test:
-    runs-on: nimbuswindows
+    runs-on: self-hosted
     name: Execute LRE load test   
     steps:
       - name: Run test in LRE
