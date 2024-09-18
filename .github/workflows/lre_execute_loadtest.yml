@@ -19,12 +19,12 @@ on:
 jobs:
   test:
     runs-on: self-hosted
-    name: Execute LRE load test 
+    name: LRE-Execute-Load-Test 
     env:
       lre_username: ${{ secrets.LRE_USERNAME }}
       lre_password: ${{ secrets.LRE_PASSWORD }}    
     steps:
-      - name: Run test in LRE
+      - name: LRE-Run-Test
         uses: MicroFocus/lre-gh-action@v1.0.2
         id: lre_run_test
         with:
@@ -49,5 +49,5 @@ jobs:
         id: lre_upload_test_result
         with:
           name: LRE-Load-Test-Result
-          path: ${{ github.workspace }}/${{ github.event.inputs.lre_test_output_dir }}
+          path: ${{ github.workspace }}/${{ github.event.inputs.lre_output_dir }}
           
