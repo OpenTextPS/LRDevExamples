@@ -40,7 +40,7 @@ jobs:
           lre_post_run_action: 'Collate and Analyze'
           lre_vuds_mode: false
           lre_status_by_sla: false
-          lre_output_dir: ${{ github.workspace }}/LreResult
+          lre_output_dir: ${{ github.workspace }}
       - name: Upload-LRE-Results
         uses: actions/upload-artifact@v4
         id: lre_upload_test_result
