@@ -22,9 +22,6 @@ jobs:
       lre_username: ${{ secrets.LRE_USERNAME }}
       lre_password: ${{ secrets.LRE_PASSWORD }}    
     steps:
-    - name: Checkout code
-        uses: actions/checkout@v4
-
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
