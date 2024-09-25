@@ -1,0 +1,53 @@
+name: Create LRE Load Test according to YamlTest/createTestFromYaml.yaml and execute it.
+
+on:
+  workflow_dispatch:
+    inputs:
+      lre_domain:
+        description: 'Domain'
+        required: true
+        default: 'DEFAULT'
+      lre_project:
+        description: 'Project'
+        required: true
+        default: 'advantageonlineshopping'
+      lre_test:
+        description: 'Test Settings in .yaml file'
+        required: true
+        default: 'TestSettings.yaml'
+
+jobs:
+  test:
+    runs-on: self-hosted
+    name: LRE-Execute-Load-Test 
+    env:
+      lre_username: ${{ secrets.LRE_USERNAME }}
+      lre_password: ${{ secrets.LRE_PASSWORD }}    
+    steps:
+      - name: LRE-Run-Test
+        uses: MicroFocus/lre-gh-action@v1.0.2
+        id: lre_run_test
+        with:
+          lre_enable_stacktrace : true       
+          lre_action: ExecuteLreTest
+          lre_description: Run load test in LRE with test settings defined in .yaml
+          lre_server: nimbuswindows.emea.softwaregrp.net
+          lre_https_protocol: false
+          lre_authenticate_with_token: true
+          lre_domain: ${{ github.event.inputs.lre_domain }}
+          lre_project: ${{ github.event.inputs.lre_project }}
+          lre_test:  YamlTest/${{ github.event.inputs.lre_test }}
+          lre_test_instance: AUTO
+          lre_timeslot_duration_hours: 0
+          lre_timeslot_duration_minutes: 30
+          lre_post_run_action: 'Collate and Analyze'
+          lre_vuds_mode: false
+          lre_status_by_sla: false
+          lre_output_dir: "${{ github.workspace }}/${{ github.event.inputs.lre_domain }}/${{ github.event.inputs.lre_project }}/${{ github.event.inputs.lre_test }}"
+      - name: Upload-LRE-Results
+        uses: actions/upload-artifact@v4
+        id: lre_upload_test_result
+        with:
+          name: LRE-Load-Test-Result
+          path: ${{ github.workspace }}/${{ github.event.inputs.lre_domain }}/${{ github.event.inputs.lre_project }}/${{ github.event.inputs.lre_test }}/LreResult/LreReports
+          

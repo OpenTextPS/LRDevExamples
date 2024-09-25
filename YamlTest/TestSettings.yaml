@@ -1,0 +1,12 @@
+##################################################
+group:
+  - group_name: "Test_defined_by_.yaml_file"
+    vusers: '5'
+    #script_id: 200
+    script_path: "YamlTests\\AdvantageOnlineShopping"
+    lg_name:
+      - "LG1"
+scheduler:
+  rampup: '20'
+  duration: '60'
+##################################################
