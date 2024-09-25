@@ -31,7 +31,7 @@ jobs:
           lre_domain: ${{ github.event.inputs.lre_domain }}
           lre_project: ${{ github.event.inputs.lre_project }}
 #         lre_test: 201
-          lre_test: YamlTest\TestSettings.yaml
+          lre_test: YamlTest\\TestSettings.yaml
           lre_test_instance: AUTO
           lre_timeslot_duration_hours: 0
           lre_timeslot_duration_minutes: 30
