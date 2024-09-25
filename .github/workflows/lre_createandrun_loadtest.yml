@@ -17,7 +17,7 @@ on:
 jobs:
   test:
     runs-on: self-hosted
-    name: LRE-Create&Execute-Load-Test 
+    name: LRE-Create_Execute-Load-Test 
     env:
       lre_username: ${{ secrets.LRE_USERNAME }}
       lre_password: ${{ secrets.LRE_PASSWORD }}    
@@ -37,7 +37,7 @@ jobs:
         with:
           lre_enable_stacktrace : true       
           lre_action: ExecuteLreTest
-          lre_description: Run load test in LRE with test settings defined in .yaml
+          lre_description: Run load test in LRE with test settings defined in yaml
           lre_server: nimbuswindows.emea.softwaregrp.net
           lre_https_protocol: false
           lre_authenticate_with_token: true
