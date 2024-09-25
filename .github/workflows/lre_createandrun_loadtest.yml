@@ -9,11 +9,7 @@ on:
         description: 'Project'
         required: true
         default: 'advantageonlineshopping'
-      lre_test:
-        description: 'Test Settings in .yaml file'
-        required: true
-        default: 'YamlTest/TestSettings.yaml'
-
+      
 jobs:
   test:
     runs-on: self-hosted
@@ -34,7 +30,7 @@ jobs:
           lre_authenticate_with_token: true
           lre_domain: ${{ github.event.inputs.lre_domain }}
           lre_project: ${{ github.event.inputs.lre_project }}
-          lre_test: ${{ github.event.inputs.lre_test }}
+          lre_test: YamlTest/TestSettings.yaml
           lre_test_instance: AUTO
           lre_timeslot_duration_hours: 0
           lre_timeslot_duration_minutes: 30
