@@ -12,7 +12,7 @@ on:
       lre_test:
         description: 'Test Settings in .yaml file'
         required: true
-        default: 'TestSettings.yaml'
+        default: 'YamlTest/TestSettings.yaml'
 
 jobs:
   test:
@@ -34,7 +34,7 @@ jobs:
           lre_authenticate_with_token: true
           lre_domain: ${{ github.event.inputs.lre_domain }}
           lre_project: ${{ github.event.inputs.lre_project }}
-          lre_test:  YamlTest/${{ github.event.inputs.lre_test }}
+          lre_test: ${{ github.event.inputs.lre_test }}
           lre_test_instance: AUTO
           lre_timeslot_duration_hours: 0
           lre_timeslot_duration_minutes: 30
