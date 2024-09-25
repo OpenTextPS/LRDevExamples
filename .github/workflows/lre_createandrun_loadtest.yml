@@ -22,15 +22,6 @@ jobs:
       lre_username: ${{ secrets.LRE_USERNAME }}
       lre_password: ${{ secrets.LRE_PASSWORD }}    
     steps:
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: adopt
-          java-version: '11'
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
       - name: LRE-Create_Run-Test
         uses: MicroFocus/lre-gh-action@v1.0.2
         id: lre_run_test
