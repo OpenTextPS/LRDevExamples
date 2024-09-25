@@ -1,5 +1,3 @@
-name: Create LRE Load Test according to YamlTest/createTestFromYaml.yaml and execute it.
-
 on:
   workflow_dispatch:
     inputs:
