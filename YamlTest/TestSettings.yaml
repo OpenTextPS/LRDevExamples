@@ -1,5 +1,5 @@
 group:
-  - group_name: "Test_yaml_file"
+  - group_name: "yamltest"
     vusers: '5'
     script_id: 200
     #script_path: "YamlTests\\AdvantageOnlineShopping"
