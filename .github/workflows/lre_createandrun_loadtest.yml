@@ -42,10 +42,10 @@ jobs:
           lre_vuds_mode: false
           lre_status_by_sla: false
           lre_output_dir: "${{ github.workspace }}/${{ github.event.inputs.lre_domain }}/${{ github.event.inputs.lre_project }}/yaml"
-      - name: Upload-LRE-Results
-        uses: actions/upload-artifact@v4
-        id: lre_upload_test_result
-        with:
-          name: LRE-Load-Test-Result
-          path: ${{ github.workspace }}/${{ github.event.inputs.lre_domain }}/${{ github.event.inputs.lre_project }}/yaml/LreResult/LreReports
+   #   - name: Upload-LRE-Results
+   #     uses: actions/upload-artifact@v4
+   #     id: lre_upload_test_result
+   #     with:
+   #       name: LRE-Load-Test-Result
+   #       path: ${{ github.workspace }}/${{ github.event.inputs.lre_domain }}/${{ github.event.inputs.lre_project }}/yaml/LreResult/LreReports
           
