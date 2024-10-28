@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IC:\LRDevExamples\TrueClient\AdvantageOnlineShopping\AOS1
+-IC:\Program Files (x86)\Micro Focus\TruClient\include
+-ec:\lrdevexamples\trueclient\advantageonlineshopping\aos1\\logfile.log
+c:\lrdevexamples\trueclient\advantageonlineshopping\aos1\\combined_AOS1.c
+c:\lrdevexamples\trueclient\advantageonlineshopping\aos1\\pre_cci.c

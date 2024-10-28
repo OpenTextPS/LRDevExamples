@@ -1,0 +1,35 @@
+Virtual User Script started at : 2024-10-28 11:10:21
+TruClient Replay (build 0053) for LoadRunner Professional 2024.3.0, build 0030. OS: Windows 10, Browser: Chromium 127.0.6533.73, initialized on 2024/10/28 at 11:10:11 (1730110211,360s)
+Running Vuser...
+Starting iteration 1.
+t=00014502ms: Step 4: Navigate to "https://www.advantageon...shopping.com/#/" started    [MsgId: MMSG-205180]
+t=00016955ms: Step 4: Navigate to https://www.advantageonlineshopping.com/#/ successfully completed with End Event "Step network completed"    [MsgId: MMSG-205180]
+t=00017447ms: Step 6: Click on button (1) button started    [MsgId: MMSG-205180]
+t=00019386ms: Step 6: Click on button (1) button successfully completed with End Event "Step network completed"    [MsgId: MMSG-205180]
+t=00019889ms: Step 7: Click on username textbox started    [MsgId: MMSG-205180]
+t=00020242ms: Step 7: Click on username textbox successfully completed with End Event "Action completed"    [MsgId: MMSG-205180]
+t=00020755ms: Step 8: Type mercury in username textbox started    [MsgId: MMSG-205180]
+t=00023621ms: Step 8: Type mercury in username textbox successfully completed with End Event "Action completed"    [MsgId: MMSG-205180]
+t=00024134ms: Step 9: Click on Password label started    [MsgId: MMSG-205180]
+t=00024489ms: Step 9: Click on Password label successfully completed with End Event "Action completed"    [MsgId: MMSG-205180]
+t=00025000ms: Step 10: Type ******* in PasswordPassword passwordbox started    [MsgId: MMSG-205180]
+t=00028124ms: Step 10: Type ******* in PasswordPassword passwordbox successfully completed with End Event "Action completed"    [MsgId: MMSG-205180]
+t=00028628ms: Step 11: Click on SIGN IN button started    [MsgId: MMSG-205180]
+t=00028962ms: Step 11: Click on SIGN IN button successfully completed with End Event "Step network completed"    [MsgId: MMSG-205180]
+t=00029477ms: Step 12: Click on CloseDark  started    [MsgId: MMSG-205180]
+t=00029802ms: Step 12: Click on CloseDark  successfully completed with End Event "Action completed"    [MsgId: MMSG-205180]
+t=00030321ms: Step 13: Click on HelpLink JavaScript link started    [MsgId: MMSG-205180]
+t=00031119ms: Step 13: Click on HelpLink JavaScript link successfully completed with End Event "Action completed"    [MsgId: MMSG-205180]
+t=00031618ms: Step 14: Click on About label started    [MsgId: MMSG-205180]
+t=00032032ms: Step 14: Click on About label successfully completed with End Event "Step network completed"    [MsgId: MMSG-205180]
+t=00032537ms: Step 16: Click on button (2) button started    [MsgId: MMSG-205180]
+t=00033350ms: Step 16: Click on button (2) button successfully completed with End Event "Action completed"    [MsgId: MMSG-205180]
+t=00033855ms: Step 17: Click on AOS Versions label started    [MsgId: MMSG-205180]
+t=00034643ms: Step 17: Click on AOS Versions label successfully completed with End Event "Step network completed"    [MsgId: MMSG-205180]
+t=00035159ms: Step 18: Click on VERSION 3.3 JavaScript link started    [MsgId: MMSG-205180]
+t=00035949ms: Step 18: Click on VERSION 3.3 JavaScript link successfully completed with End Event "Step network completed"    [MsgId: MMSG-205180]
+t=00036463ms: Step 19: Click on VERSION 3.3 label started    [MsgId: MMSG-205180]
+t=00036785ms: Step 19: Click on VERSION 3.3 label successfully completed with End Event "Action completed"    [MsgId: MMSG-205180]
+Ending iteration 1.
+Ending Vuser...
+Vuser Terminated.
